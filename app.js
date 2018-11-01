@@ -13,9 +13,9 @@ let sum = 5 + 4;
 console.log(sum);
 
 // Script used to conditionally display message if user's first name begins with "L":
-let name = "Larry Doe";
+let name = "Jack Doe";
 
-if(name.charCodeAt() === 76) {
+if(name.charCodeAt() > 76) {
     console.log('Back of the line!');
 } else {
     console.log('Next!');
@@ -29,30 +29,29 @@ function sayHello() {
     return "Hello World!";
 }
 
-// Object created to define users that attempt to access site:
-let user = {
-    Name: 'John',
-    Age: 15
-}
+// Test users created to test the checkAge function. All users received the applicable message in the console:
 
- // Conditional statement that defines if user is legal age to access site:
- if(user.Age < 21) {
-    console.log(checkAge());
-} else { 
-    console.log('Come on In!');
-}
+checkAge('Charles', 21);
+checkAge('Aby', 27);
+checkAge('James',18);
+checkAge('John', 17);
+
 
 // Function that displays message if user is not of legal age to access site:
 
-function checkAge() {
-    
-    return "Sorry " + user.Name +  " you " + "aren't " + "old " + "enough " + "to " + "view " + "this " + "page!";
+function checkAge(Name,Age) {
+    if (Age < 21) {
+        console.log ("Sorry " + Name +  " you " + "aren't " + "old " + "enough " + "to " + "view " + "this " + "page!")
+    } else {
+        console.log("Come on In " + Name + "!");
+    }
 }
+    
 
 // Array and for loop created to display a series of my favorite vegetables:
 let myFavVeggies = ['Collard Greens', 'Turnip Greens', 'Green Beans', 'Corn', 'Okra', 'Spinach'];
 
-for(let i = 0 ; i <= myFavVeggies.length; i++) {
+for(let i = 0 ; i < myFavVeggies.length; i++) {
     console.log(myFavVeggies[i]); 
 }
 
@@ -65,8 +64,8 @@ let users = [
 
 
 // For loop created to loop through users to determine if they meet the age requirement for site access:
-for (let i = 0; i <= users.length; i++) {
-    console.log(i);
+for (let i = 0; i < users.length; i++) {
+    checkAge(users[i].Name, users[i].Age);
 }
 
     
@@ -89,7 +88,6 @@ if (charLength % 2 == 0) {
 } else {
     console.log('The world is an odd place!');
 }
-
 
 
 
